@@ -1,0 +1,35 @@
+body {
+    background-color: darkgray;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#minCanvas {
+    border: 2px solid darkgray;
+    border-right: none;
+    border-top: none;
+}
+#divPoeng {
+    width: 740px;
+    background-color: darkgray;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 30px;
+    text-align: center;
+}
+#hdnPoeng, #hdnRekord {
+    font-size: 20px;
+    color: white;
+    font-family: arial;
+    margin: 0;
+    
+}
+#hdnPoeng {
+    float: left;
+}
+#hdnRekord {
+    float: right;
+}
+#canvasDiv {
+    text-align: center;
+}
