@@ -35,6 +35,7 @@ function tegnBall() { // Tegner opp en sirkel
     ctx.fillStyle = ball.farge; // Setter farge
     ctx.fill(); // Fyller sirkelen med fargen
 }
+
 function gravitasjon() {
     ball.gravitySpeed += ball.gravity;
     ball.xpos += ball.xfart;
@@ -61,6 +62,7 @@ function tegnRacket() {
     }
     racket.xpos += (racket.xfart*racket.xretning);  // Posisjonen til racket styres av retning*fart
 }
+let dash = false
 document.onkeydown = function(evt) { // Flytter racket med piltaster
     let tastekode = evt.keyCode;
     if (tastekode === 37) { // V. piltast
@@ -68,6 +70,10 @@ document.onkeydown = function(evt) { // Flytter racket med piltaster
     }
     if(tastekode === 39) { // H. piltast
         racket.xretning = 1; // Flytte racket til høyre
+    }
+    if(tastekode === 16 && !dash) {
+	racket.xpos += racket.xretning * 100
+	dash = true
     }
 }
 document.onkeyup = function(evt) { // Stopper racket når man slipper pilstastene
@@ -77,6 +83,9 @@ document.onkeyup = function(evt) { // Stopper racket når man slipper pilstasten
     }
     if (tastekode === 39 && racket.xretning === 1) {
         racket.xretning = 0;
+    }
+    if (tastekode === 16) {
+	dash = false
     }
 }
 function sjekkOmBallTrefferVegg() { // Kollisjonskode vegg
